@@ -1,7 +1,23 @@
 @font-face {
-  font-family: "Geist Pixel Circle";
-  src: url("fonts/GeistPixel-Circle.woff2") format("woff2");
+  font-family: "Neue Montreal";
+  src: url("fonts/NeueMontreal-Regular.otf") format("opentype");
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("fonts/NeueMontreal-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("fonts/NeueMontreal-Bold.otf") format("opentype");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -17,8 +33,8 @@
   --trust-bg: #28282a;
   --trust-border: rgba(255, 255, 255, 0.4);
   --trust-text: #c4c2c3;
-  --font-sans: "Inter", "Segoe UI", system-ui, sans-serif;
-  --font-display: "BubbledotICG-FinePos", "Geist Pixel Circle", monospace;
+  --font-sans: "Neue Montreal", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Neue Montreal", "Helvetica Neue", Arial, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -55,7 +71,7 @@ section[id] { scroll-margin-top: 94px; }
 }
 
 .bg { position: absolute; z-index: 0; inset: 0; overflow: hidden; background: #000; }
-.bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.bg-video { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; pointer-events: none; }
 .site-header, .hero, .hero-meta, .mobile-menu { position: relative; z-index: 1; }
 
 .site-header {
@@ -202,7 +218,7 @@ section[id] { scroll-margin-top: 94px; }
   color: #fff;
   font-family: var(--font-display);
   font-size: clamp(44px, 7.8vw, 108px);
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 0.92;
   text-transform: uppercase;
@@ -328,7 +344,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #fff; outline-offset:
   margin: 0;
   font-family: var(--font-display);
   font-size: clamp(54px, 8.5vw, 118px);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.07em;
   line-height: 0.89;
   text-transform: uppercase;
@@ -381,7 +397,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #fff; outline-offset:
 .difference-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr); align-items: end; gap: clamp(54px, 10vw, 150px); }
 .difference-copy { display: flex; max-width: 480px; flex-direction: column; gap: 28px; padding-bottom: 8px; }
 .difference-copy p { margin: 0; color: #bbb; font-size: clamp(17px, 1.65vw, 21px); line-height: 1.65; }
-.difference-glyph { font-family: var(--font-display); font-size: 42px; }
+.difference-glyph { font-family: var(--font-display); font-size: 42px; font-weight: 500; }
 
 .signal-section {
   position: relative;
@@ -446,7 +462,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #fff; outline-offset:
   color: #fff;
   font-family: var(--font-display);
   font-size: clamp(52px, 8.4vw, 118px);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.065em;
   line-height: 0.88;
   text-transform: uppercase;
@@ -492,13 +508,14 @@ a:focus-visible, button:focus-visible { outline: 2px solid #fff; outline-offset:
   color: #fff;
   font-family: var(--font-display);
   font-size: clamp(34px, 5vw, 70px);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.055em;
   line-height: 1;
   text-transform: uppercase;
 }
 
 .signal-item.service-long { min-height: clamp(160px, 15vw, 210px); }
+.signal-item.service-wide h3 { font-size: clamp(31px, 4.4vw, 62px); }
 .signal-item.service-long h3 { font-size: clamp(28px, 4.15vw, 58px); line-height: 1.03; }
 
 .signal-item p {
@@ -535,6 +552,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #fff; outline-offset:
   color: #fff;
   font-family: var(--font-display);
   font-size: 16px;
+  font-weight: 500;
   letter-spacing: 0.12em;
 }
 
@@ -578,7 +596,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #fff; outline-offset:
 
 .case-study-shell { width: min(100%, 1280px); }
 .case-study-intro { display: grid; grid-template-columns: minmax(0, 1.28fr) minmax(320px, 0.72fr); align-items: end; gap: clamp(48px, 8vw, 124px); }
-.case-study-heading :is(h1, h2) { margin: 0; font-family: var(--font-display); font-size: clamp(62px, 8.5vw, 126px); font-weight: 400; letter-spacing: -0.075em; line-height: 0.86; text-transform: uppercase; }
+.case-study-heading :is(h1, h2) { margin: 0; font-family: var(--font-display); font-size: clamp(62px, 8.5vw, 126px); font-weight: 500; letter-spacing: -0.075em; line-height: 0.86; text-transform: uppercase; }
 .case-study-heading :is(h1, h2) span { color: #d89abd; }
 .case-study-summary { padding-bottom: 7px; }
 .case-study-summary p { max-width: 470px; margin: 0; color: #b8b8b8; font-size: clamp(17px, 1.55vw, 21px); line-height: 1.65; }
@@ -609,11 +627,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid #fff; outline-offset:
 
 .case-study-process { margin-top: clamp(92px, 12vw, 166px); scroll-margin-top: 100px; }
 .process-header { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr); align-items: end; gap: clamp(48px, 9vw, 130px); padding-bottom: 46px; }
-.process-header :is(h2, h3), .challenge-header :is(h2, h3) { margin: 0; font-family: var(--font-display); font-size: clamp(64px, 8vw, 112px); font-weight: 400; letter-spacing: -0.07em; line-height: 0.88; text-transform: uppercase; }
+.process-header :is(h2, h3), .challenge-header :is(h2, h3) { margin: 0; font-family: var(--font-display); font-size: clamp(64px, 8vw, 112px); font-weight: 500; letter-spacing: -0.07em; line-height: 0.88; text-transform: uppercase; }
 .process-header > p { max-width: 420px; margin: 0 0 4px; color: #aaa; font-size: clamp(16px, 1.5vw, 20px); line-height: 1.6; }
 .process-list { border-bottom: 1px solid rgba(255,255,255,0.2); }
 .process-step { display: grid; grid-template-columns: 92px minmax(240px, 0.7fr) minmax(300px, 1fr); align-items: center; gap: clamp(24px, 4vw, 66px); padding: clamp(28px, 4vw, 48px) 0; border-top: 1px solid rgba(255,255,255,0.2); }
-.process-step > span { color: #d89abd; font-family: var(--font-display); font-size: clamp(36px, 4.2vw, 58px); line-height: 1; }
+.process-step > span { color: #d89abd; font-family: var(--font-display); font-size: clamp(36px, 4.2vw, 58px); font-weight: 500; line-height: 1; }
 .process-step :is(h3, h4) { margin: 0; font-size: clamp(25px, 2.9vw, 40px); font-weight: 500; letter-spacing: -0.045em; }
 .process-step p { max-width: 590px; margin: 0; color: #979797; font-size: clamp(14px, 1.25vw, 17px); line-height: 1.65; }
 
@@ -677,7 +695,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #fff; outline-offset:
 .orbit-object { position: relative; width: min(100%, 500px); aspect-ratio: 1; margin-inline: auto; }
 .orbit-core { position: absolute; inset: 18%; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.26); border-radius: 50%; background: radial-gradient(circle at 38% 30%, rgba(255,255,255,0.42), rgba(201,140,178,0.24) 26%, rgba(26,20,24,0.92) 68%); box-shadow: inset 0 0 70px rgba(255,255,255,0.08), 0 34px 90px rgba(0,0,0,0.5); text-align: center; }
 .orbit-core span { color: #ccc; font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
-.orbit-core strong { margin: 6px 0; font-family: var(--font-display); font-size: clamp(42px, 7vw, 72px); font-weight: 400; letter-spacing: -0.06em; text-transform: uppercase; }
+.orbit-core strong { margin: 6px 0; font-family: var(--font-display); font-size: clamp(42px, 7vw, 72px); font-weight: 500; letter-spacing: -0.06em; text-transform: uppercase; }
 .orbit-ring { position: absolute; border: 1px solid rgba(255,255,255,0.22); border-radius: 50%; }
 .orbit-ring-one { inset: 4%; animation: orbitSpin 18s linear infinite; }
 .orbit-ring-one i { position: absolute; top: 7%; left: 18%; width: 12px; height: 12px; border: 2px solid #151515; border-radius: 50%; background: #fff; box-shadow: 0 0 22px rgba(255,255,255,0.7); }
@@ -693,7 +711,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #fff; outline-offset:
 .work-item::before { position: absolute; inset: 0; background: radial-gradient(circle at 80% 15%, rgba(255,255,255,0.2), transparent 24%); content: ""; opacity: 0; transition: opacity 0.35s ease; }
 .work-item:hover::before { opacity: 1; }
 .work-meta { position: relative; z-index: 1; display: flex; justify-content: space-between; font-size: 9px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.72; }
-.work-item h3 { position: relative; z-index: 1; margin: auto 0 32px; font-family: var(--font-display); font-size: clamp(48px, 6.2vw, 84px); font-weight: 400; letter-spacing: -0.07em; line-height: 0.84; text-transform: uppercase; }
+.work-item h3 { position: relative; z-index: 1; margin: auto 0 32px; font-family: var(--font-display); font-size: clamp(48px, 6.2vw, 84px); font-weight: 500; letter-spacing: -0.07em; line-height: 0.84; text-transform: uppercase; }
 .work-item p { position: relative; z-index: 1; max-width: 310px; margin: 0 0 26px; font-size: 14px; line-height: 1.55; opacity: 0.75; }
 .work-item small { position: relative; z-index: 1; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.55; }
 .work-blue { background: linear-gradient(150deg, #d997bb, #5d3f59 58%, #171016); }
@@ -779,6 +797,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #fff; outline-offset:
   .signal-item { min-height: 132px; grid-template-columns: 34px minmax(0, 1fr) 28px; gap: 12px; padding-block: 22px; }
   .signal-item:hover { padding-inline: 0; }
   .signal-item h3 { font-size: clamp(34px, 12vw, 50px); }
+  .signal-item.service-wide h3 { font-size: clamp(29px, 9.7vw, 44px); }
   .signal-item.service-long { min-height: 178px; }
   .signal-item.service-long h3 { font-size: clamp(26px, 9.4vw, 40px); }
   .signal-item p { grid-column: 2 / -1; max-width: 92%; font-size: 13px; }

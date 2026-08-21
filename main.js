@@ -30,6 +30,32 @@ window.addEventListener('resize', () => {
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
+async function initHeroBackgroundVideo() {
+  const video = document.querySelector('.bg-video[data-hls-src]')
+  if (!video || prefersReducedMotion || window.location.protocol === 'file:') return
+
+  const videoSource = video.dataset.hlsSrc
+  const playVideo = () => video.play().catch(() => {})
+
+  const { default: Hls } = await import('hls.js')
+  if (Hls.isSupported()) {
+    const hls = new Hls({
+      enableWorker: true,
+      lowLatencyMode: false,
+    })
+
+    hls.loadSource(videoSource)
+    hls.attachMedia(video)
+    hls.on(Hls.Events.MANIFEST_PARSED, playVideo)
+    window.addEventListener('pagehide', () => hls.destroy(), { once: true })
+  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = videoSource
+    video.addEventListener('loadedmetadata', playVideo, { once: true })
+  }
+}
+
+initHeroBackgroundVideo()
+
 const sectionReveals = [...document.querySelectorAll('.section-reveal')]
 
 if (prefersReducedMotion || !('IntersectionObserver' in window)) {
